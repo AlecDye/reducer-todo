@@ -1,12 +1,12 @@
-export const initialState = {
-    item: "Learn about reducers",
-    completed: false,
-    id: 3892987589
-};
 
-export const todoReducer = (state, action) => {
-    console.log(action)
-    return {
-        ...state
-    }
-};
+export const initialState = {
+    item: 'Default Task',
+    completed: false,
+    id: 12345
+}
+
+export const taskReducer = (state, action) => {
+    return state;
+}
+
+//? ADD_TASK, TOGGLE_TASK, CLEAR_COMPLETED action cases?
