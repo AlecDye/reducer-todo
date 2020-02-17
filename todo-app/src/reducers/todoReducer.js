@@ -1,11 +1,19 @@
-
 export const initialState = {
-    item: 'Default Task',
-    completed: false,
-    id: 12345
+    todoEntries: [
+        {
+            item: 'Cook dinner @ 5pm',
+            completed: false,
+            id: 12345
+        },
+        {
+            item: 'Do Laundry',
+            completed: false,
+            id: 12346
+        }
+    ]
 }
 
-export const taskReducer = (state, action) => {
+export const todoReducer = (state, action) => {
     return state;
 }
 
