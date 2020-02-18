@@ -15,12 +15,15 @@ function App() {
     }
     dispatch({ type: "ADD_TODO", payload: newTodo })
   };
+
   const handleToggle = item => {
     dispatch({ type: "TOGGLE_TODO", payload: item })
   }
+
   const handleClear = () => {
     dispatch({ type: "CLEAR_COMPLETED" })
   }
+
   //TODO: bring individual components to App
   return (
     <div className="App">
