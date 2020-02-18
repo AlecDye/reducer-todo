@@ -2,6 +2,10 @@ import React from "react";
 import { Todo } from "./Todo";
 
 const TodoList = (props) => {
+    // const [state, dispatch] = useReducer();
+    // const handleClear = () => {
+    //     dispatch({ type: "CLEAR_COMPLETED" })
+    // }
     // map props into Todo component; DONT FORGET RETURN!
     return (
         <div>
@@ -10,6 +14,7 @@ const TodoList = (props) => {
                     <Todo key={index} state={event} handleToggle={props.handleToggle} />
                 )
             })}
+            {/* <button onClick={handleClear}>Clear Completed Tasks</button> */}
         </div>
     )
 }

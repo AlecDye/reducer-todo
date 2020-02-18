@@ -18,12 +18,16 @@ function App() {
   const handleToggle = item => {
     dispatch({ type: "TOGGLE_TODO", payload: item })
   }
+  const handleClear = () => {
+    dispatch({ type: "CLEAR_COMPLETED" })
+  }
   //TODO: bring individual components to App
   return (
     <div className="App">
       <div className="wrapper">
         <TodoForm handleNewTodo={handleNewTodo} />
         <TodoList state={state.todoEntries} handleToggle={handleToggle} />
+        <button onClick={handleClear}>Clear Completed Tasks</button>
       </div>
     </div>
   )

@@ -1,7 +1,7 @@
 export const initialState = {
     todoEntries: [
         {
-            item: "",
+            item: "Walk the doggo",
             completed: false,
             id: Date.now()
         }
