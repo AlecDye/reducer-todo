@@ -21,8 +21,10 @@ function App() {
   //TODO: bring individual components to App
   return (
     <div className="App">
-      <TodoForm handleNewTodo={handleNewTodo} />
-      <TodoList state={state.todoEntries} handleToggle={handleToggle} />
+      <div className="wrapper">
+        <TodoForm handleNewTodo={handleNewTodo} />
+        <TodoList state={state.todoEntries} handleToggle={handleToggle} />
+      </div>
     </div>
   )
 }

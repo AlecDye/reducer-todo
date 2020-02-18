@@ -7,6 +7,7 @@ export const Todo = (props) => {
     // console.log("Todo.js props", props)
     return (
         <div
+            className={props.state.completed ? "toggled" : " "}
             onClick={event => {
                 event.preventDefault();
                 props.handleToggle(props.state.id)

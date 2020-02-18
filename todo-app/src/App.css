@@ -1,0 +1,16 @@
+html, body {
+    text-align: center;
+}
+
+.wrapper {
+    margin: 5rem auto;
+}
+
+p {
+    cursor: pointer;
+}
+
+.toggled {
+    text-decoration: line-through;
+    stroke: 200;
+}
