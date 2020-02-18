@@ -1,39 +1,36 @@
 export const initialState = {
     todoEntries: [
         {
-            item: 'Cook dinner @ 5pm',
+            item: "",
             completed: false,
-            id: 12345
-        },
-        {
-            item: 'Do Laundry',
-            completed: false,
-            id: 12346
+            id: Date.now()
         }
     ]
 }
 
-export const todoReducer = (state, action) => {
+export const todoReducer = (state = initialState, action) => {
     switch (action.type) {
         case "ADD_TODO":
-            console.log(state, action)
-            const newTodo = {
-                item: action.payload,
-                completed: false,
-                id: Date.now()
-            }
             return {
                 ...state,
-                todoEntries: [...state.todoEntries, newTodo]
+                todoEntries: [...state.todoEntries, action.payload]
             };
         case "TOGGLE_TODO":
+            // map over todoEntries looking for id that matches the payload and toggles completed property
             return {
-                ...state,
-                completed: !state.completed
+                todoEntries: state.todoEntries.map(item => item.id === action.payload ? { ...item, completed: !item.completed } : item)
+                // state.todoEntries.map(item => {
+                // if (item.id === action.payload.id) {
+                //     return { ...item, completed: !item.completed }
+                // } else {
+                //     return item
+                // }
+            }
+        case "CLEAR_COMPLETED":
+            return {
+                todoEntries: state.list.filter(item => !item.completed)
             }
         default:
             return state;
     }
 }
-
-//? ADD_TASK, TOGGLE_TASK, CLEAR_COMPLETED action cases?

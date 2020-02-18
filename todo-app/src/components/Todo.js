@@ -8,7 +8,7 @@ const Todo = (props) => {
     console.log("Todo.js props", props)
     return (
         <div
-            onClick={() => dispatch({ type: "TOGGLE_TODO" })}
+            onClick={() => dispatch({ type: "TOGGLE_TODO", payload: props.id })}
         >
             <p>{props.item}</p>
         </div>
