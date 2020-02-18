@@ -24,14 +24,13 @@ export const todoReducer = (state, action) => {
             }
             return {
                 ...state,
-                // item: action.payload
                 todoEntries: [...state.todoEntries, newTodo]
             };
-        // case "TOGGLE_TODO":
-        //     return {
-        //         ...state,
-
-        //     }
+        case "TOGGLE_TODO":
+            return {
+                ...state,
+                completed: !state.completed
+            }
         default:
             return state;
     }

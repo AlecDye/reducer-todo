@@ -11,6 +11,12 @@ const TodoForm = () => {
         setNewTodo(event.target.value)
     }
 
+    // const toggleTodo = clickedId => {
+    //     dispatch({
+    //         type: "TOGGLE_TODO", payload: clickedId
+    //     })
+    // }
+
     return (
         <div>
             <input
@@ -21,6 +27,7 @@ const TodoForm = () => {
                 onChange={handleChanges}
             />
             <button
+                type="submit"
                 onClick={() => {
                     dispatch({ type: "ADD_TODO", payload: newTodo })
                 }}
