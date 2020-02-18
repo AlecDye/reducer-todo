@@ -1,30 +1,46 @@
-import React, { useReducer } from "react";
-import Todo from "./Todo"
-import { todoReducer, initialState } from "../reducers/todoReducer";
+import React from "react";
+import { Todo } from "./Todo";
 
-//* introduce state in this component => Todo.js; form doesn't need it
-
-const TodoList = () => {
-    const [state, dispatch] = useReducer(todoReducer, initialState);
+const TodoList = (props) => {
+    // map props into Todo component; DONT FORGET RETURN!
     return (
-        <div>{state.todoEntries.map(todoObj => {
-            return (
-                <Todo
-                    key={todoObj.id}
-                    item={todoObj.item}
-                    completed={todoObj.completed}
-                    id={todoObj.id}
-                />
-                //     <div>
-                //         <p>{todoObj.item}</p>
-                //     </div>
-            )
-        })}
-            <button>
-                Clear Completed Tasks
-        </button>
+        <div>
+            {props.state.map((event, index) => {
+                return (
+                    <Todo key={index} state={event} handleToggle={props.handleToggle} />
+                )
+            })}
         </div>
     )
 }
 
 export default TodoList;
+// import React, { useReducer } from "react";
+// import Todo from "./Todo"
+// import { todoReducer, initialState } from "../reducers/todoReducer";
+
+
+// const TodoList = () => {
+//     const [state, dispatch] = useReducer(todoReducer, initialState);
+//     return (
+//         <div>{state.todoEntries.map(todoObj => {
+//             return (
+//                 <Todo
+//                     key={todoObj.id}
+//                     item={todoObj.item}
+//                     completed={todoObj.completed}
+//                     id={todoObj.id}
+//                 />
+//                 //     <div>
+//                 //         <p>{todoObj.item}</p>
+//                 //     </div>
+//             )
+//         })}
+//             <button>
+//                 Clear Completed Tasks
+//         </button>
+//         </div>
+//     )
+// }
+
+// export default TodoList;
